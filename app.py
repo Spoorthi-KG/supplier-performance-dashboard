@@ -13,11 +13,11 @@ st.set_page_config(page_title="Supplier Performance Dashboard", page_icon="📊"
 
 db = SupplierDatabase()
 
-st.title("📊 Supplier Performance & SLA Dashboard")
+st.title("Supplier Performance & SLA Dashboard")
 st.markdown("---")
 
 # Sidebar filters
-st.sidebar.header("🔍 Filters")
+st.sidebar.header("Filters")
 
 suppliers_df = db.get_suppliers()
 supplier_options = ['All Suppliers'] + suppliers_df['supplier_name'].tolist()
@@ -76,7 +76,7 @@ with col5:
 st.markdown("---")
 
 # Supplier KPIs
-st.subheader("🏢 Supplier Performance Breakdown")
+st.subheader("Supplier Performance Breakdown")
 supplier_kpis = calculate_supplier_kpis(invoices_df, outstanding_df, filtered_suppliers_df)
 
 st.dataframe(
@@ -95,7 +95,7 @@ st.dataframe(
 st.markdown("---")
 
 # Visualizations
-st.subheader("📊 Visual Analytics")
+st.subheader("Visual Analytics")
 tab1, tab2, tab3, tab4 = st.tabs(["Performance Comparison", "Trends", "Distribution", "Drill-Down"])
 
 with tab1:
@@ -177,7 +177,7 @@ with tab4:
 
 # Export
 st.markdown("---")
-st.subheader("📥 Export Data")
+st.subheader("Export Data")
 col1, col2 = st.columns(2)
 
 with col1:
